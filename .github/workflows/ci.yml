@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  offline-tests:
+    name: 离线靶子 + 脚本语法
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 离线靶子（4 个不变量）
+        run: npm test
+
+      - name: 构建脚本语法自检
+        run: |
+          sh -n host/build.sh
+          sh -n rootfs/build-rootfs.sh
+          sh -n rootfs/pack-lean.sh
+          sh -n android-probe/build.sh
