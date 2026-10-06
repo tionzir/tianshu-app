@@ -1,0 +1,149 @@
+{
+  "surfaces": {
+    "automatic": {
+      "label": "automatic",
+      "items": [
+        "/capsule",
+        "/chat",
+        "/diagram",
+        "/dream",
+        "/fast",
+        "/index",
+        "/init",
+        "/leave",
+        "/remember",
+        "/task",
+        "/yes",
+        "/yolo",
+        "/zen"
+      ]
+    },
+    "composer": {
+      "label": "composer",
+      "items": [
+        "/ask",
+        "/btw",
+        "/clear",
+        "/compact",
+        "/editor",
+        "/effort",
+        "/goal",
+        "/goal-cancel",
+        "/goal-criteria",
+        "/goal-pause",
+        "/goal-resume",
+        "/goal-status",
+        "/interview",
+        "/mode",
+        "/model",
+        "/paste",
+        "/plan",
+        "/plan-mode",
+        "/queue",
+        "/stash",
+        "/todo"
+      ]
+    },
+    "messageActions": {
+      "label": "messageActions",
+      "items": [
+        "/evidence",
+        "/fork",
+        "/handoff",
+        "/plan-approve",
+        "/plan-close",
+        "/plan-list",
+        "/plan-reject",
+        "/plan-view",
+        "/resume",
+        "/review",
+        "/rewind",
+        "/rollback",
+        "/undo",
+        "/verify",
+        "/write-plan"
+      ]
+    },
+    "panels": {
+      "label": "panels",
+      "items": [
+        "/cache",
+        "/chronicle",
+        "/cockpit",
+        "/constellation",
+        "/context",
+        "/council",
+        "/enter",
+        "/galaxy",
+        "/jobs",
+        "/mcp",
+        "/memory",
+        "/metrics",
+        "/mission",
+        "/plugin",
+        "/scout",
+        "/sensorium",
+        "/skill",
+        "/starflow",
+        "/starmap",
+        "/tasks",
+        "/team",
+        "/team-resume",
+        "/thinking",
+        "/workflow"
+      ]
+    },
+    "settings": {
+      "label": "settings",
+      "items": [
+        "/config",
+        "/connect",
+        "/cvm",
+        "/debug",
+        "/disconnect",
+        "/doctor",
+        "/domain",
+        "/grant",
+        "/keybindings",
+        "/login",
+        "/logout",
+        "/logs",
+        "/mirror",
+        "/permission",
+        "/plan-template",
+        "/prefix-budget",
+        "/python",
+        "/settings",
+        "/setup",
+        "/theme",
+        "/tools",
+        "/trust",
+        "/tui",
+        "/update",
+        "/verbose",
+        "/vim",
+        "/vision",
+        "/workflow"
+      ]
+    },
+    "topbar": {
+      "label": "topbar",
+      "items": [
+        "/branch",
+        "/glance",
+        "/help",
+        "/new",
+        "/palette",
+        "/panel",
+        "/sessions",
+        "/status"
+      ]
+    }
+  },
+  "notApplicable": {
+    "/exit": "终端交互产物：无窗口可退出，App 用系统返回键",
+    "/pager": "终端交互产物：滚屏分页在触屏是原生行为",
+    "/scroll": "终端交互产物：滚屏分页在触屏是原生行为",
+    "/cd": "终端交互产物：工作目录由会话创建时决定，改用会话设置"
+  }
+}

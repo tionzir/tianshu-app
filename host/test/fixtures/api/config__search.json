@@ -1,0 +1,1 @@
+{"backends":["bing","duckduckgo"],"braveApiKeyEnv":"BRAVE_API_KEY","tavilyApiKeyEnv":"TAVILY_API_KEY","bochaApiKeyEnv":"BOCHA_API_KEY","timeoutMs":15000,"region":"","keyStatus":{"bocha":{"source":"none","ref":""},"brave":{"source":"none","ref":""},"tavily":{"source":"none","ref":""}}}

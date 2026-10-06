@@ -1,0 +1,1 @@
+{"enabled":false,"preset":"default","github":"default","npm":"default","pypi":"default","go":"default","rust":"default","autoFallback":true,"fallbackMemoryMinutes":10,"fallbackTimeoutSec":60}

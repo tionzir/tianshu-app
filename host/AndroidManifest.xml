@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  天枢独立 App —— 最小宿主（Wave 2）。
+
+  这一版把 assets 里的 rootfs.tar.xz 解压到私有目录，用 jniLibs 里的 proot
+  以它为 rootfs 起一个 Linux 用户态，再在里面跑 tianshu。
+  打开即开始，屏幕上摊开每一步；出问题截图即可定位卡在哪一段。
+
+  extractNativeLibs 必须为 true —— Android 10+ 只允许从 nativeLibraryDir execve ELF。
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.tianshu.host">
+
+    <!--
+      必须声明 INTERNET：Android 用 AID_INET 补充 gid 管制 socket 创建，
+      没有它连 loopback 的 socket(AF_INET, ...) 都会返回 EACCES。
+      第一版漏了这条，serve 绑不上端口、curl 也连不上（health 000）。
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 读 DNS 服务器地址，写进 rootfs 的 /etc/resolv.conf -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+      共享存储读写 —— 让 App 里的天枢看得见用户放进去的代码。
+
+      ⚠ 这两条权限**必须配合 targetSdk ≤ 29 才有路径级效果**。
+      Android 11 起，targeting ≥ 30 的 App 走分区存储：READ/WRITE_EXTERNAL_STORAGE
+      对非媒体文件不再给路径访问，非要路径访问就得申请 MANAGE_EXTERNAL_STORAGE
+      并让用户去"设置 → 所有文件访问"手动开一遍。
+
+      本机实测（决定性）：设备上装的 Termux 是 `targetSdkVersion:'28'` +
+      READ/WRITE_EXTERNAL_STORAGE，而它在这台 Android 16 (API 36) 上对
+      /storage/emulated/0 有完整读写（本次改动就是在它的容器里做的）。
+      所以走它同一条路：targetSdk 28，不要 MANAGE_EXTERNAL_STORAGE，
+      用户只需点一次普通的权限对话框。
+    -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--
+      targetSdkVersion 从 33 降到 28 就是为了上面那条：拿到共享存储的路径级访问。
+
+      副作用盘点（都是本 App 无所谓或已显式处理）：
+        - usesCleartextTraffic 的默认值在 targetSdk ≥ 28 时是 false，
+          下面已显式写 true，不受影响；
+        - minSdk 21 仍然 ≥ Android 14/15 对"可安装 targetSdk 下限"的要求
+          （设备上 Termux 同为 targetSdk 28，装得上就是证据）；
+        - 不打算上架，Google Play 的 targetSdk 门槛不适用于这个自用包。
+    -->
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+
+    <!--
+      usesCleartextTraffic：App 要连自己起的 127.0.0.1:18799，而 targetSdk >= 28 时
+      Android 默认禁止明文流量，会报
+        java.io.IOException: Cleartext HTTP traffic to 127.0.0.1 not permitted
+
+      本来更该用 networkSecurityConfig 只对 loopback 放开（那才是精准的），
+      但本机构建链只有 android-sdk-platform-23，而该属性是 API 24 引入的
+      （实测 android-23 的 android.jar 里找不到 networkSecurityConfig，只有
+      usesCleartextTraffic），所以退回这个全局开关。
+
+      风险与约束：App 里**只有** AppRuntime.baseUrl() 一处网络出口，写死
+      http://127.0.0.1，流量不出设备。将来若加别的 http 请求，这里要重新评估。
+    -->
+    <!--
+      Theme.Light.NoTitleBar：去掉系统那条又厚又没用的标题栏（"天枢"）。
+      内容直接从状态栏下面开始，标题改由各页正文里的字号层级承担。
+
+      取舍：它同时决定了窗口背景（浅色）。默认外观是"清蓝"浅色，所以配它；
+      深色主题下冷启动那一两百毫秒会看到浅色底闪过 —— 每页 onResume 会立刻用
+      Theming 的 backdrop 覆盖 content 容器，之后就不再露出窗口背景了。
+    -->
+    <!--
+      ⚠️ 这里**不写** `android:debuggable`（默认即 false）。
+      它曾经被写死成 "true"：那等于把 App 私有目录敞开给同设备上的任何 adb
+      （`run-as dev.tianshu.host` 一敲就进去，rootfs / 会话 / 配置全都能拖走）——
+      开发期取证靠的正是这条路，所以它对别人也一样好使。发布版必须关。
+      确需可调试时用构建开关：`DEBUGGABLE=1 sh build.sh`（见 build.sh 的 aapt2 link）。
+      HostTest 的 `testReleaseHygiene` 钉着"manifest 里不许出现 debuggable"。
+    -->
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/app_icon"
+        android:theme="@android:style/Theme.Light.NoTitleBar"
+        android:extractNativeLibs="true"
+        android:usesCleartextTraffic="true">
+        <!--
+          configChanges：**别让启动页被重建**。
+
+          它的"只跑一次"靠的是实例字段 bootStarted（见 MainActivity.startBoot）。Activity 一重建
+          就会再起一条 boot 线程，与还在跑的那条**并发解压同一个 stagingDir、各自 renameTo 同一个
+          rootfsDir** —— 轻则第二次 rename 失败报"启动没成功"（rootfs 其实好的），重则目录写坏。
+          而启动要解压约 600 MB、可能好几分钟，中间转个屏、切个深色就足够撞上。
+
+          这里一次性接管会触发重建的配置变更；本页是纯自绘的开屏，不需要为它们重新加载布局。
+
+          ⚠️ 代价：被接管的这些变更**只回调 onConfigurationChanged、不再走 onResume** ——
+          原来挂在 onResume 上的外观重贴（Theming.refresh + tintSpinner/tintBackdrop）
+          已在 MainActivity.onConfigurationChanged 里补了一份，别以为 onResume 还会兜住。
+          RootfsInstaller 侧另有一道按目标目录的互斥锁兜底。
+
+          ⚠️ 为什么**没有** `density`：它是 API 24 才加入 configChanges 的 flag，而本工程用
+          android-23 的 android.jar 做 `-I`（build.sh 第 4 步），aapt2 会直接报
+          `error: '...density|...' is incompatible with attribute configChanges`，让整个 manifest
+          处理失败、build.sh 在 aapt2 link 阶段 exit 1（2026-10-05 实测）。
+          代价：运行时改显示密度会让本页重建一次 —— 由 RootfsInstaller 的互斥锁兜底。
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+          对话页的软键盘：`adjustResize` = **让系统把窗口缩矮**（输入框随窗口底边自动抬起，系统级保证，
+          不依赖我们去读键盘高度）。
+          为什么不是 `adjustPan`（用户 2026-10-06 报的"背景图片被抬起来"）：pan 把**整个窗口**推上去 ——
+          挂在 content 上的背景跟着走。为什么不是 `adjustNothing`（2026-10-06 曾短暂改成它，是**错的**）：
+          窗口完全不动的代价是"没人把输入框抬起来"，而该设备在 adjustNothing 下**不更新可见区**，
+          自抬算不出键盘高 ⇒ 输入框被键盘盖住（用户第二次报："我打字都不知道我打了什么"）。
+          现在"背景不动"改由**绘制层**保证（`Theming.backdrop` 里渐变与图片都按固定全屏高画，
+          见 `Backdrop.extentFor`），与让位方式解耦 —— 所以这里可以放心用 resize。
+          `KeyboardWatcher` 仍挂着（resize 生效时它自动不动作，只作兜底 + 诊断落盘）。
+          `stateAlwaysHidden` 保持不变 —— 那是 2026-10-03 用户要的"切到本页不自动弹键盘"。
+        -->
+        <activity
+            android:name=".ChatActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:exported="false" />
+        <!-- 历史会话列表：点一条进去可重放并**续聊**；长按改名 / 归档 / 取消归档 / 删除 -->
+        <!-- 软键盘同对话页：`adjustResize`（系统缩窗口 ⇒ 让位），背景由绘制层保不动。
+             差别在"谁被让位"——本页的搜索框在**页面顶部**（键盘够不着它），所以系统 resize 之后
+             自然就没事了；`KeyboardWatcher.attachScrollOnly` 只补列表底部内边距，
+             免得最后一条会话被键盘盖住且滚不上来。取舍见 KeyboardWatcher 类注释。 -->
+        <activity
+            android:name=".SessionListActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:exported="false" />
+        <!-- 命令面板：104 条 `/` 命令按落点分组浏览；数据来自 assets/tianshu-cmd/ -->
+        <activity
+            android:name=".CommandPanelActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 外观：6 套背景主题 × 7 款主色 + 自定义底色/渐变/背景图/卡片透明度 -->
+        <activity
+            android:name=".AppearanceActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 设置：运行状态 + 运行控制台（27 个 /config 族）+ 日志（底部栏第三格） -->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 首次配对：密钥不再随包携带，由用户粘贴 key 或从共享存储导入 -->
+        <activity
+            android:name=".SetupActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 模型页：终端 /connect /model 的 App 落点（/config/providers + /config/default-model） -->
+        <activity
+            android:name=".ModelsActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 面板页：终端 panels 那一面的 App 落点（/tasks /mcp /plugin /cache /storage …） -->
+        <activity
+            android:name=".PanelsActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 星图页：/starmap 的 App 落点 —— 星域花名册 + 最近里程碑（本地读 .rivet/constellation.json） -->
+        <activity
+            android:name=".StarmapActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 编年史页：/chronicle 的 App 落点 —— 里程碑编年史（本地读盘） -->
+        <activity
+            android:name=".ChronicleActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 蓝图页：/constellation 的 App 落点 —— 项目骨架 + 架构变迁（本地读盘） -->
+        <activity
+            android:name=".ConstellationActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 会话详情页（2026-10-06② 对账补缺）—— 官方**会话级**接口的 App 落点：
+             待批准/待应答（可批准/驳回）、本会话改动文件（点开看内容）、
+             后台任务 / 运行挂钩 / 审查门（只读）。入口：会话列表长按、对话页批准条。 -->
+        <activity
+            android:name=".SessionDetailActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 账号页（2026-10-06④ 对账补缺）—— 官方账号 / OAuth 路由的 App 落点：
+             星籍状态、设备码登录（**含轮询**，这是原先缺的一步）、服务商 OAuth 登录/登出。
+             入口：设置页「原生入口 → 账号与登录」；命令面板的 /login。 -->
+        <activity
+            android:name=".AccountActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+        <!-- 个人页（2026-10-06，用户点名补的）—— 官方 profile 面的 App 落点：
+             星籍（/account/status）、用量（/profile/overview：token / 活跃天 / 登录时长）、
+             星域用量（/profile/domain-usage）、登记仓库（overview 的 repositories）。
+             入口：底栏第 4 格（Tabs.PROFILE）；底部另有「账号与登录」入口去 AccountActivity。 -->
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/app_name"
+            android:exported="false" />
+    </application>
+</manifest>

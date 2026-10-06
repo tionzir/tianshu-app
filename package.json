@@ -1,0 +1,15 @@
+{
+  "name": "tianshu-app-wave1",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "天枢独立 App — Wave 1：硬不变量与离线靶子（四个靶子 + 契约探针）",
+  "scripts": {
+    "test": "node --test test/all.test.mjs",
+    "probe:contract": "node scripts/probe-contract.mjs",
+    "probe:routes": "node scripts/probe-routes.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

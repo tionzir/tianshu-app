@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用名（桌面图标下、最近任务、安装界面显示的就是它）。
+         2026-10-06 用户要求去掉「Host」那截尾巴：原来叫「天枢 Host」。
+         改的是**显示名**，包名 dev.tianshu.host 与签名都不动（换了就得卸载重装）。 -->
+    <string name="app_name">天枢</string>
+</resources>

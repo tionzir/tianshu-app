@@ -1,0 +1,114 @@
+总计 112 条命令
+
+/ask  切换 Ask 模式（纯问答，不碰文件）。想问问题不想被改代码时用，再次执行退出
+/branch  显示会话分支树（父 + 子）；back 切回父会话
+/btw  侧问 — 就当前会话问一句，不进对话历史
+/cache {F3}  打开缓存面板（token 消耗 / 命中率 / 缓存省钱 / DeepSeek 官方账单）
+/capsule  星域胶囊：把某星完整方法论注入本轮对话（消息级追加零缓存代价，同 recall_capsule；最多 2 枚，off 摘除）
+/cd  会话中途切换工作目录（保前缀缓存，会话归属迁往新项目）
+/chat  切换到轻量聊天模式（不走完整 agent 循环，适合简单问答）
+/chronicle  阶段传说 — 打开 Chronicle 浮层，翻项目里程碑编年史
+/clear  [core]  清屏（只清当前显示，不删会话历史）
+/cockpit {F4}  切换 Cockpit 驾驶舱（8 面板运行时仪表盘：缓存命中 / 上下文 / 验证交付 / 提醒台账等）
+/compact  [core]  压缩上下文：汇总工具输出、折叠已结讨论、保留关键决策。过半时主动用比等自动压缩更省 token
+/config  设置面板 — 子代理路由 / 审查子代理 / 识图模型 / 基础项
+/connect  连接模型服务商（选内置或自定义，填写 API 密钥）
+/constellation  星图 — 项目蓝图与里程碑编年史
+/context  显示上下文账本（当前占用多少、哪些被压缩了、pinned anchors）
+/council  [core]  议事会：多星域专家对抗会诊，只出计划不执行。--rounds 2+ 开多轮辩论，适合方案评审/风险研判——多席模型并行调用，token 开销
+/cvm  CVM 拦截提示级别开关（off / intercept / warn / all）
+/debug  调试信息：prompt 指纹 / 缓存 / 上下文载荷 / MCP 状态
+/diagram  生成 Mermaid 图骨架（architecture / dataflow / sequence / flowchart / compar
+/disconnect  断开服务商——整组删除该 key 注册的模型列表并清除密钥
+/doctor  [core]  环境健康检查——Node 版本/git/Python 等是否就绪，bash 工具用的哪个 shell
+/domain  查看或切换星域人格（改变方法论与决策阈值，不改工具）。list 列出/auto 按消息匹配/off 关闭
+/dream  把本会话的决策蒸馏进项目记忆（跨会话生效）
+/editor  使用外部编辑器编辑草稿，返回后不自动发送
+/effort  [core]  切换推理强度——控成本与控质量的核心旋钮。off 最省/max 最强/auto 按任务复杂度自动选
+/enter  恢复一个子代理会话继续跑（如 /enter wo_team:T1 继续修这个 bug）
+/evidence  显示上一轮的证据链——agent 的结论是基于哪些文件/命令得出的
+/exit  [core]  保存会话并退出
+/fast  解除禅模式，恢复全量工具面（/zen 的出口）
+/fork  把当前会话 fork 成新分支——想试另一条路又怕丢上下文时用
+/galaxy  星河集群：按问题维度拆分（前端/后端/审查/测试），每维度派指定星域专家并行+末尾全局审查。适合跨层多维复合任务
+/glance  切换概览栏密度（compact 单行 / full 完整）
+/goal  设定跨多轮的自主目标——agent 持续迭代直到达成或耗尽预算，输入框上方出现 GoalBar 显示进度
+/goal-cancel  终止当前正在跑的自主目标（别名 /cancel-goal）
+/goal-criteria  查看或设置目标的成功判据——判据明确时 agent 更容易收敛
+/goal-pause  暂停活跃的自主目标（保留状态，可 /goal-resume 续）
+/goal-resume  恢复一个被暂停或阻塞的目标
+/goal-status  显示当前自主目标状态（轮次 / 预算 / 判据达成情况）
+/grant  授权并记住工作区外目录（默认只读）；无参列出本工作区已记住的授权
+/handoff  [core]  写结构化交接文档（任务目标/已完成/卡点/下一步/坑），归档后自动注入新会话
+/help  [core] {F1}  显示所有命令及用法说明
+/index  重建代码库索引（模块图 + CLI 入口）
+/init  [core]  交互式项目初始化：verify 声明 / skills / hooks 脚手架
+/interview  深度访谈澄清需求——agent 反过来问你问题，把模糊想法逼成清晰规格
+/jobs  打开后台任务面板（bash 后台启动的 shell 任务列表）
+/keybindings  查看标准或旧版兼容键位；切换映射
+/leave  离开仪式 — 在星图里留下你的印记
+/login  OAuth 登录（codex 等订阅型服务商，浏览器完成授权；/connect 选 codex 后的下一步）
+/logout  登出天枢账号（清除本机 account 凭据；不影响模型 provider 的 OAuth）
+/logs  本会话的日志落点（会话 / 缓存 / 六维 / 桌面），含门控与回收说明
+/mcp  查看 MCP 服务器连接状态+工具数。接外部工具后查健康度
+/memory  显示会话记忆——session 条目/项目信息素/知识文件，长会话后查 agent 记住了什么
+/metrics  查看会话缓存、上下文、计价来源、分支和推理档位
+/mirror  切换国内镜像源（GitHub / npm / pip / go / rust）加速依赖下载
+/mission  天契 — 当前任务契约
+/mode  查看或切换提示词模式（标准/详尽/摘要，影响输出详细度）
+/model  [core] {F6}  查看或切换当前会话模型。多 Provider 用户高频，切换后下轮生效
+/new  [core]  开新会话——重置上下文但不重启进程（项目记忆/配置/工作目录保留）。旧会话存档，/resume 可回访
+/pager  分页浏览历史输出（滚走的内容可回看）
+/palette  打开命令面板（模糊搜索全部命令与界面动作，同 Ctrl+P）
+/panel  开关右侧面板（on / off / 无参切换）
+/paste  展开、折叠或清除当前草稿中的长粘贴
+/permission  [core] {F7}  权限模式：监督 / 自动 / 全自动（无参弹选择器，持久化默认）
+/plan  [core]  规划模式：只读调研后产出带 Mermaid 图+TDD 步骤的实现计划（不写实现代码），存到 .rivet/plans/。复杂任务先进 pl
+/plan-approve  审批计划并开始执行（可指定选项）
+/plan-close  预览或应用计划收尾（归档/标记完成）
+/plan-list  列出待审批的计划文档
+/plan-mode  切换计划编写模式（只读，只允许写计划文件）。再次执行退出
+/plan-reject  驳回计划并附反馈让 agent 修改
+/plan-template  计划模板：list 列出 / save <name> 存当前计划为模板 / <name> 套用
+/plan-view  预览计划文档全文（固定高度翻页；无参=唯一待审批，否则撰写中草稿）
+/plugin  插件管理——list / install / remove / enable / disable / info
+/prefix-budget  前缀预算归因：各上下文块的字符/token 占比 + 当前档位——查「前缀为什么这么大」
+/python  检查 Python/uv/Git 环境，或为项目自动初始化 uv 环境
+/queue  [core]  排队一条消息到下轮——busy 时也可攒，回车随下条一并发送（无参预览队列）
+/remember  [core]  把一句话写进项目长期记忆（跨会话生效，新会话自动携带）；无参查看最近的用户记忆
+/resume  [core]  继续一个历史会话（无参打开选择器；/sessions 看列表）
+/review  [core]  L2 对抗审查：派单个验证审查员复核当前未提交改动。max 升 L3 五人编队；off/on/status 控制自动审查门并查看待终审累积
+/rewind  打开 rewind 浮层：回退到历史消息点（可选只回对话 / 只回代码 / 两者）
+/rollback  检查点回滚（两阶段）：无参预览将还原/删除的文件，再 /rollback confirm 执行。与 /undo 不同——/undo 按本会话
+/scout  [core]  巡天侦察：派多个只读子代理并行诊断，交付带证据的核对清单+runbook。不写文件不改代码，适合接手陌生仓库/上线前体检/接口对账
+/scroll  浏览历史输出（上下翻页查看已滚走的内容）
+/sensorium  显示天枢自感知状态（六维遥测快照）
+/sessions  [core] {F8}  列出所有历史会话——找历史/继续之前的工作
+/settings  设置面板（同 /config）——子代理路由 / 审查子代理 / 识图模型 / 基础项
+/setup  设置面板（同 /config）
+/skill  技能：list 列出 / install <name> 从 .claude/skills 装入 / review 审阅自动蒸馏草稿 / ap
+/starflow  星流编排（最重）：全流程贯通 council评审→team波次→galaxy攻坚，阶段间硬门禁兜底，可resume。先 /scout 摸底再
+/starmap  星图总览浮层 — 看整张星图与你的位置
+/stash  暂存、恢复或交换当前草稿（本进程内，含附件）
+/status  [core]  显示 agent 状态（模型 / 星域 / 缓存命中 / token / 账号星籍）
+/task  任务模式（已废弃：意图自动检测；子代理面板用 /tasks）
+/tasks  [core] {F2}  打开子代理任务面板（查看/切入 f/停止 x，运行中·已完成·全部）
+/team  [core]  团队模式：任务按文件拆分→多 patcher 写工分波并行实现→主控集成验证。适合多文件并行写的大改动（可传计划文件路径）
+/team-resume  从波次检查点恢复 team 执行（中断后接着跑，不重头来）
+/theme  [core] {F5}  切换配色主题（暗色/亮色/nebula/sakura 等多套）
+/thinking  查看当前会话已有的思考详情
+/todo  管理任务清单：list / add <内容> / done <id> / skip <id> / move <id> up|down
+/tools  查看工具分层（CORE / EXTENDED）与已挂载状态；enable <name> 把 EXTENDED 工具挂到主 agent（会碎一
+/trust  授信当前项目：项目级 hooks 生效、配置安全键（verify/permissions/mcp…）参与合并。status 查询 / off
+/tui  查看或切换终端绘制模式；执行结束后可切换
+/undo  [core]  撤销文件改动——回到检查点快照。无参预览最近 / 数字选快照 / preview 看文件清单
+/update  检查并安装最新版本的天枢
+/verbose  开关详细工具输出（显示完整的工具调用参数与返回，排查问题用）
+/verify  显示本会话所有改动的验证状态——提交前自检哪些验证通过/未跑
+/vim  开关 vim 键位绑定（esc 进 normal 模式等）
+/vision  配置独立视觉模型（探测 + 真实图片验证后才保存）
+/workflow  YAML 工作流编排：list 列出 / <name> 执行 / replay <id> 回放 trace
+/write-plan  /plan 的别名——同一套计划工作流
+/yes  [core]  ⚠ 同 /yolo——跳过所有权限确认并持久化为默认；off 退出。显式输入即视为确认
+/yolo  [core]  ⚠ yolo 模式（跳过所有权限确认并持久化为默认）。与 /yes 同义；off 退出。仅在你完全信任当前任务时使用
+/zen  禅模式：收敛工具面做深度专注；on|off 写配置（新会话生效）· status 查当前相位

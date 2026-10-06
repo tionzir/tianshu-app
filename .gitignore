@@ -1,0 +1,15 @@
+node_modules/
+*.log
+android-probe/build/
+.rivet/
+rootfs.tar.xz
+rootfs/rootfs.tar.xz
+host/build/
+# 签名密钥：不入库（它是私钥）。放在 build/ 之外，才能跨构建复用同一把 ——
+# 否则每次构建都换密钥，Android 会拒绝覆盖安装，只能卸载（连会话历史一起丢）。
+host/.keystore/
+host/assets/rootfs.tar.xz
+# ⚠ 含 API key 与解它的 .token-key —— 绝不入库
+host/assets/tianshu-config/
+# 构建期从 data/ 复制进来的命令目录（源在 data/commands.txt 与 data/components.json）
+host/assets/tianshu-cmd/

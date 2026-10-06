@@ -1,0 +1,1 @@
+{"diff":"diff --git a/workspace/key.txt b/workspace/key.txt\nnew file mode 100644\nindex 0000000..07de457\n--- /dev/null\n+++ b/workspace/key.txt\n@@ -0,0 +1,2 @@\n+（夹具已脱敏：原 diff 里是用户真实的密钥备忘）\n+example-key-placeholder\n\\ No newline at end of file\n"}

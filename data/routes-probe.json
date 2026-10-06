@@ -1,0 +1,2653 @@
+{
+  "port": 8798,
+  "timeoutMs": 2500,
+  "total": 268,
+  "byVerdict": {
+    "registered": 105,
+    "unprobed": 120,
+    "not-registered": 38,
+    "crashed-server": 1
+  },
+  "rows": [
+    {
+      "method": "POST",
+      "path": "/abort",
+      "probedWith": "POST",
+      "truthful": true,
+      "status": 200,
+      "ms": 18,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/account/device",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 10,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/account/identity/refresh",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 6,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/account/logout",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/account/poll",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 5,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/account/status",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 5,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/browser/input",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/browser/install",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 5,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/browser/live/:sessionKey",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 6,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/browser/readiness",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 648,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/browser/sessions",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 13,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/cache/usage",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 20,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/approval",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/approval",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/balance",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 722,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/bash-permissions",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 13,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/bash-permissions",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/checkpoint",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 11,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/checkpoint",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 10,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/computer-use",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 18,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/config/computer-use/revoke",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/deepseek/auth",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/deepseek/auth",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/config/deepseek/auth",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 2,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/deepseek/cost",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 619,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/deepseek/summary",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 290,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/default-domain",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 15,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/default-domain",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 15,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/default-model",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 12,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/default-model",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 8,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/delivery",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 10,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/delivery",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 8,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/editor",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 8,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/editor",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 13,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/fetch",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/fetch",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/config/fix-autocrlf",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/config/greeting",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 8,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/greeting",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 11,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/image-gen-model",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 7,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/image-gen-model",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 7,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/config/image-gen-model/onboard",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/image-gen-model/test",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/config/mirrors",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 8,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/mirrors",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 14,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/network",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/network",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/path-grants",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 400,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/path-grants",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 2,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/permission-dirs",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 7,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/permission-dirs",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 25,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/pr-defaults",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 13,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/pr-defaults",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 13,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/pro-features",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 24,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/providers",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 80,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 68,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/providers/:name",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 8,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/providers/:name/allow-pro-fallback",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/:name/default",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/providers/:name/key",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/:name/key",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/:name/keys",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/providers/:name/keys/:keyId",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/providers/:name/keys/:keyId/key",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/:name/keys/:keyId/models",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/providers/:name/keys/:keyId/models/:modelId",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/providers/:name/keys/:keyId/models/:modelId",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 6,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/providers/:name/models/:modelId",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/custom",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/match-models",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/test",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/test-key",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/providers/tunables",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/config/routing",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/routing",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 10,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/runtime-lean",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/runtime-lean",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 8,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/search",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 24,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/search",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 20,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/config/search/key",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 9,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/config/shell",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 7,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/shell",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 7,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/tool-preset",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 6,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/tool-preset",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/vision-auto-bridge",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 10,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/vision-auto-bridge",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 7,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/vision-model",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 20,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/vision-model",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 16,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/config/vision-model/discover",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/config/vision-model/onboard",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/config/workspace",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 11,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/workspace",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 13,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/config/zen",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/config/zen",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 8,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/environment",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 863,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/git/branches",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/git/diff",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 2,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/git/graph",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 0,
+      "ms": 135,
+      "note": "TypeError: UND_ERR_SOCKET",
+      "verdict": "crashed-server"
+    },
+    {
+      "method": "GET",
+      "path": "/git/working-tree",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 121,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/github/prs",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 35,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/github/prs/:number",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 13,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/github/prs/:number/checks",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 4,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/github/prs/:number/checks/:checkIndex/log",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 4,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/github/prs/:number/diff",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 4,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/github/prs/:number/merge",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 7,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/github/prs/:number/push-fix",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 6,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/github/prs/:number/review",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 5,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/greeting",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 7,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/health.",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/mcp/presets",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/mcp/servers",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/mcp/servers/",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "DELETE",
+      "path": "/mcp/servers/:id",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 12,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/mcp/servers/:id",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 21,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/mcp/servers/:id/approve",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 5,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/mcp/servers/:id/deny",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/mcp/servers/:id/logs",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 5,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "DELETE",
+      "path": "/mcp/servers/:id/oauth",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/mcp/servers/:id/oauth/start",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/mcp/servers/:id/oauth/status",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 4,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/mcp/servers/:id/restart",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/mcp/servers/:id/tools",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/mcp/status",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 18,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/missions",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 9,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/missions/:id",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 7,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/missions/:id/archive",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/missions/:id/rename",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/models",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/open-file",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "DELETE",
+      "path": "/plugins/:name",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/plugins/enable",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/plugins/install",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/plugins/installed",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 14,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/plugins/presets",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 12,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/project-docs",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/project-docs",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 400,
+      "ms": 6,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/project-templates/apply",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/project-templates/status",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/project/trust",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 10,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/project/trust",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 4,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/project/trust/dismiss",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/project/trust/list",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 4,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/prompt",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/readyz",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 4,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/recordings/distill",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/remote/info",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 7,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/rollback.",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/schedule",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 5,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/schedule",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "DELETE",
+      "path": "/schedule/:id",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "PATCH",
+      "path": "/schedule/:id",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/schedule/:id/pause",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/schedule/:id/run-now",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/schedule/:id/stop",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/schedule/status",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 5,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/schedule/trigger-focus",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/scratch",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 13,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/scratch/cleanup",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 200,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "DELETE",
+      "path": "/sessions/:id",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "PATCH",
+      "path": "/sessions/:id",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id.",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/abort",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/approval-mode",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/artifacts",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/artifacts/:artifactId",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/ask-mode",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/cockpit",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 1,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/compact",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 1,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/council",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/delegate",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 6,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/delegate-capabilities",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 13,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/delegate/:requestId/result",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/delegate/:workerId/abort",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/documents/:docId",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 6,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/domain",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 8,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/domains",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/effort",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/feedback",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/file-content",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/file-preview/pdf",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/files",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/fork",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/git/commit",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/git/diff",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 2,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/git/file-base",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 2,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/git/merge-back",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/git/pr",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/git/working-tree",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/goal",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/goal",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/goal/cancel",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/goal/pause",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/goal/resume",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/handoff",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 5,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/hooks",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/sessions/:id/hooks",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/images/:imgId",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/insights",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/interventions/:requestId/answer",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/jobs",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/jobs/:jobId/kill",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/jobs/:jobId/logs",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/list-dir",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/model",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/models",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "DELETE",
+      "path": "/sessions/:id/permanent",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 1,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/plan-mode",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/plans",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/plans/:slug",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "PUT",
+      "path": "/sessions/:id/plans/:slug",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/plans/:slug/approve",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/plans/:slug/auto-approve/cancel",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/plans/:slug/reject",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/prompt",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/queue",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/queue/retract",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/requests/:requestId",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/resume",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 5,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/review-gate",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/review-gate",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 1,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/rewind",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/rewind-points",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/rewind/file-preview",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/rewind/files",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/rollback",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/rollback/preview",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/skills",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/skills",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 1,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "DELETE",
+      "path": "/sessions/:id/skills/:name",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "PUT",
+      "path": "/sessions/:id/skills/:name",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/skills/:name/content",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/skills/install",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/skills/installable",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/snapshot/export",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/snapshot/import",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/steer",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/team-checkpoints",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 4,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/team-resume",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/unarchive",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/vision-bridge",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/workers/:workerId/kill",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/:id/workers/:workerId/log",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 6,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/workers/:workerId/steer",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 1,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/sessions/:id/zen",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/sessions/search",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 400,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/settings/intent",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/skills",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/speech/model/install",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/speech/model/status",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 3,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/speech/transcribe",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/status",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 2,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/storage",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 22,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/storage/cleanup",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/tasks",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 4,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "GET",
+      "path": "/tasks/:id",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 404,
+      "ms": 5,
+      "note": "",
+      "verdict": "not-registered"
+    },
+    {
+      "method": "POST",
+      "path": "/tasks/:id/cancel",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "POST",
+      "path": "/test",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 2,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/tools/disabled",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 11,
+      "note": "",
+      "verdict": "registered"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/responses",
+      "probedWith": "GET",
+      "truthful": false,
+      "status": 404,
+      "ms": 3,
+      "note": "",
+      "verdict": "unprobed"
+    },
+    {
+      "method": "GET",
+      "path": "/worktrees",
+      "probedWith": "GET",
+      "truthful": true,
+      "status": 200,
+      "ms": 51,
+      "note": "",
+      "verdict": "registered"
+    }
+  ]
+}
